@@ -1,12 +1,16 @@
-<img src="http://www.darkui.com/images/logo-888.png">
-
 ## DarkUI
 Dark themed control and docking library for .NET WinForms.
+
+Fork of the [DarkUI](https://github.com/RobinPerris/DarkUI) library originally created by Robin Perris who sadly passed away.\
+This fork is primarily for personal changes and needs, but if you find any changes that you like to use, feel free to do so.
+
+### Changes
+- Added support for `Net6-Windows`
 
 ### About DarkUI
 DarkUI is an attempt to create a simple, extensible control library which emulates the look and feel of popular tabbed document interfaces such as Visual Studio, Photoshop, WebStorm, and XCode. Originally just a collection of bug fixes and enhancements built on top of WinForms, it has now evolved in to a fully working docking and control library.
 
-Check out our [GitHub pages site](http://www.darkui.com).
+Check out our [GitHub pages site](https://github.com/RobinPerris/DarkUI/wiki).
 
 ### Attribution
 
@@ -20,16 +24,12 @@ You can also read the [GitHub project wiki](https://github.com/RobinPerris/DarkU
 ### Screenshots
 Game map editor
 
-![Game map editor](http://www.darkui.com/images/editor.png)
+![Game map editor](https://tutorials.techrad.co.za/wp-content/uploads/2020/05/4-1024x642.png)
 
 Lua script editor
 
-![Lua script editor](http://www.darkui.com/images/lua.png)
-
-Example docking application
-
-![Example docking application](http://www.darkui.com/images/docking.png)
+![Lua script editor](https://tutorials.techrad.co.za/wp-content/uploads/2020/05/3-1024x642.png)
 
 Controls preview
 
-![Controls preview](http://www.darkui.com/images/controls.png)
+![Controls preview](https://tutorials.techrad.co.za/wp-content/uploads/2020/05/1.png)
