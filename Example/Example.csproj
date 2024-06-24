@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net6-windows</TargetFramework>
 	  <UseWindowsForms>true</UseWindowsForms>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>

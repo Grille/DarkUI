@@ -1,97 +1,52 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFrameworks>net40;net6-windows</TargetFrameworks>
-	  <UseWindowsForms>true</UseWindowsForms>
-    <OutputType>Library</OutputType>
-    <SccProjectName></SccProjectName>
-    <SccLocalPath></SccLocalPath>
-    <SccAuxPath></SccAuxPath>
-    <SccProvider></SccProvider>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <UseWindowsForms>true</UseWindowsForms>
-    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Update="Controls\DarkCheckBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\DarkDropdownList.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\DarkComboBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\DarkGroupBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\DarkNumericUpDown.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\DarkRadioButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\DarkTitle.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\DarkTreeView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\DarkListView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\DarkScrollBase.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\DarkButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\DarkContextMenu.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\DarkLabel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\DarkMenuStrip.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\DarkScrollBar.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\DarkScrollView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\DarkSectionPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\DarkSeparator.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\DarkStatusStrip.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\DarkTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\DarkToolStrip.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Docking\DarkDockContent.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Docking\DarkDockGroup.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Docking\DarkDockPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Docking\DarkDockRegion.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Docking\DarkDocument.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Docking\DarkToolWindow.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFrameworks>net40;net6-windows</TargetFrameworks>
+		<UseWindowsForms>true</UseWindowsForms>
+		<OutputType>Library</OutputType>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Version>3.0.0</Version>
+		
+		<Title>DarkUI (Grille's-Fork)</Title>
+		<PackageId>DarkUI_Grille</PackageId>
+		<Authors>Robin Perris, Grille</Authors>
+		<Description>Dark themed control and docking library for .NET WinForms</Description>
+		<Copyright>Copyright © Robin Perris, Grille</Copyright>
+		<PackageIcon>icon-64.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageTags>docking winforms net-winforms docking-library docking-application c-sharp dotnet dotnet-framework visual-studio visual-studio-themes windows windows-desktop windows-forms</PackageTags>
+		<RepositoryUrl>https://github.com/Grille/DarkUI</RepositoryUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		
+	</PropertyGroup>
+	
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net40|AnyCPU'">
+		<NoWarn>1701;1702;CS1591</NoWarn>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6-windows|AnyCPU'">
+		<NoWarn>1701;1702;CS1591</NoWarn>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net40|AnyCPU'">
+		<NoWarn>1701;1702;CS1591</NoWarn>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6-windows|AnyCPU'">
+		<NoWarn>1701;1702;CS1591</NoWarn>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<Folder Include="Properties\" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="..\icon-64.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
 </Project>
