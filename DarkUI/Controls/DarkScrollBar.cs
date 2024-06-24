@@ -377,13 +377,7 @@ namespace DarkUI.Controls
 
         public void ScrollByPhysical(int offsetInPixels)
         {
-            var isVert = _scrollOrientation == DarkScrollOrientation.Vertical;
-
-            var thumbPos = isVert ? (_thumbArea.Top - _trackArea.Top) : (_thumbArea.Left - _trackArea.Left);
-
-            var newPosition = thumbPos - offsetInPixels;
-
-            ScrollToPhysical(newPosition);
+            Value = _value + offsetInPixels;
         }
 
         public void UpdateScrollBar()
