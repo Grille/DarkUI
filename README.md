@@ -6,6 +6,7 @@ This fork is primarily for personal changes and needs, but if you find any chang
 
 ### Changes
 - Added support for `Net6-Windows`
+- Improved mouse scroll
 
 ### About DarkUI
 DarkUI is an attempt to create a simple, extensible control library which emulates the look and feel of popular tabbed document interfaces such as Visual Studio, Photoshop, WebStorm, and XCode. Originally just a collection of bug fixes and enhancements built on top of WinForms, it has now evolved in to a fully working docking and control library.
