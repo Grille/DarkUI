@@ -71,15 +71,15 @@ namespace DarkUI.Controls
             get { return _value; }
             set
             {
+                var maximumValue = Maximum - ViewSize;
+                if (maximumValue < Minimum)
+                    maximumValue = Minimum;
+
                 if (value < Minimum)
                     value = Minimum;
 
-                var maximumValue = Maximum - ViewSize;
                 if (value > maximumValue)
                     value = maximumValue;
-
-                if (maximumValue < Minimum)
-                    throw new InvalidOperationException();
 
                 if (_value == value)
                     return;
@@ -380,11 +380,7 @@ namespace DarkUI.Controls
 
         public void ScrollByPhysical(int offsetInPixels)
         {
-            Console.WriteLine(ViewSize);
-            Console.WriteLine(Maximum);
-            Console.WriteLine(Value);
             Value = _value + offsetInPixels;
-            Console.WriteLine(Value);
         }
 
         public void UpdateScrollBar()

@@ -18,8 +18,6 @@ namespace Example
             cmbList.Items.Add(new DarkDropdownItem("Item4"));
             cmbList.Items.Add(new DarkDropdownItem("Item5"));
             cmbList.Items.Add(new DarkDropdownItem("Item6"));
-
-            cmbList.SelectedItemChanged += delegate { System.Console.WriteLine($"Item changed to {cmbList.SelectedItem.Text}"); };
         }
 
         #endregion
