@@ -8,7 +8,7 @@
 		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Version>3.0.0</Version>
+		<Version>3.0.1</Version>
 		
 		<Title>DarkUI (Grille's-Fork)</Title>
 		<PackageId>DarkUI_Grille</PackageId>
