@@ -11,7 +11,7 @@
 		<Version>3.0.1</Version>
 		
 		<Title>DarkUI (Grille's-Fork)</Title>
-		<PackageId>DarkUI_Grille</PackageId>
+		<PackageId>Grille-DarkUI</PackageId>
 		<Authors>Robin Perris, Grille</Authors>
 		<Description>Dark themed control and docking library for .NET WinForms</Description>
 		<Copyright>Copyright © Robin Perris, Grille</Copyright>
