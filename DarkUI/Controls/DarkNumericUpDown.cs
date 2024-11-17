@@ -102,7 +102,7 @@ namespace DarkUI.Controls
             var g = e.Graphics;
             var rect = e.ClipRectangle;
 
-            var fillColor = Colors.HeaderBackground;
+            var fillColor = Colors.CaptionInactiveBackground;
 
             using (var b = new SolidBrush(fillColor))
             {
@@ -138,7 +138,7 @@ namespace DarkUI.Controls
             var g = e.Graphics;
             var rect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);
 
-            var borderColor = Colors.GreySelection;
+            var borderColor = Colors.ControlBorder;
 
             if (Focused && TabStop)
                 borderColor = Colors.BlueHighlight;

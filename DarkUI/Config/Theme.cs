@@ -4,57 +4,72 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 
+using DstColors = DarkUI.Config.Colors;
+using DstConsts = DarkUI.Config.Consts;
+
 namespace DarkUI.Config
 {
     public class Theme
     {
         public class CColors
         {
-            public Color GreyBackground { get; set; }
-            public Color HeaderBackground { get; set; }
-            public Color BlueBackground { get; set; }
-            public Color DarkBlueBackground { get; set; }
-            public Color DarkBackground { get; set; }
+            public Color ControlBackground { get; set; }
+            public Color ControlBackgroundOddIndex { get; set; }
+            public Color CaptionInactiveBackground { get; set; }
+            public Color CaptionActiveBackground { get; set; }
+            public Color X0 { get; set; }
+            public Color ButtonDown { get; set; }
             public Color MediumBackground { get; set; }
-            public Color LightBackground { get; set; }
-            public Color LighterBackground { get; set; }
+            public Color ButtonBackground { get; set; }
+            public Color ButtonHighlight { get; set; }
             public Color LightestBackground { get; set; }
-            public Color LightBorder { get; set; }
-            public Color DarkBorder { get; set; }
-            public Color LightText { get; set; }
-            public Color DisabledText { get; set; }
+            public Color BorderLight { get; set; }
+            public Color BorderDark { get; set; }
+            public Color Text { get; set; }
+            public Color TextDisabled { get; set; }
             public Color BlueHighlight { get; set; }
-            public Color BlueSelection { get; set; }
-            public Color GreyHighlight { get; set; }
-            public Color GreySelection { get; set; }
-            public Color DarkGreySelection { get; set; }
-            public Color DarkBlueBorder { get; set; }
-            public Color LightBlueBorder { get; set; }
-            public Color ActiveControl { get; set; }
+            public Color SelectionActive { get; set; }
+            public Color CheckboxDisabled { get; set; }
+            public Color Scroolbar { get; set; }
+            public Color ControlBorder { get; set; }
+            public Color CheckboxAmbivalentBackground { get; set; }
+
+            public Color SelectionInactive { get; set; }
+
+            public Color ButtonDisabledBackground { get; set; }
+            public Color ActiveCaptionBorderTop0 { get; set; }
+            public Color ActiveCaptionBorderBottom { get; set; }
+            public Color ActiveCaptionBorderTop1 { get; set; }
 
             public void Use()
             {
-                Config.Colors.GreyBackground = GreyBackground;
-                Config.Colors.HeaderBackground = HeaderBackground;
-                Config.Colors.BlueBackground = BlueBackground;
-                Config.Colors.DarkBlueBackground = DarkBlueBackground;
-                Config.Colors.DarkBackground = DarkBackground;
-                Config.Colors.MediumBackground = MediumBackground;
-                Config.Colors.LightBackground = LightBackground;
-                Config.Colors.LighterBackground = LighterBackground;
-                Config.Colors.LightestBackground = LightestBackground;
-                Config.Colors.LightBorder = LightBorder;
-                Config.Colors.DarkBorder = DarkBorder;
-                Config.Colors.LightText = LightText;
-                Config.Colors.DisabledText = DisabledText;
-                Config.Colors.BlueHighlight = BlueHighlight;
-                Config.Colors.BlueSelection = BlueSelection;
-                Config.Colors.GreyHighlight = GreyHighlight;
-                Config.Colors.GreySelection = GreySelection;
-                Config.Colors.DarkGreySelection = DarkGreySelection;
-                Config.Colors.DarkBlueBorder = DarkBlueBorder;
-                Config.Colors.LightBlueBorder = LightBlueBorder;
-                Config.Colors.ActiveControl = ActiveControl;
+                DstColors.ControlBackground = ControlBackground;
+                DstColors.ControlBackgroundOddIndex = ControlBackgroundOddIndex;
+                DstColors.CaptionInactiveBackground = CaptionInactiveBackground;
+                DstColors.CaptionActiveBackground = CaptionActiveBackground;
+
+                DstColors.DefaultButtonBackground = X0;
+                DstColors.ControlPressed = ButtonDown;
+                DstColors.MediumBackground = MediumBackground;
+                DstColors.LightBackground = ButtonBackground;
+                DstColors.LighterBackground = ButtonHighlight;
+                DstColors.LightestBackground = LightestBackground;
+                DstColors.LightBorder = BorderLight;
+                DstColors.DarkBorder = BorderDark;
+                DstColors.LightText = Text;
+                DstColors.DisabledText = TextDisabled;
+                DstColors.BlueHighlight = BlueHighlight;
+                DstColors.SelectionActive = SelectionActive;
+                DstColors.GreyHighlight = CheckboxDisabled;
+                DstColors.Scroolbar = Scroolbar;
+                DstColors.ControlBorder = ControlBorder;
+                DstColors.CheckboxAmbivalentBackground = CheckboxAmbivalentBackground;
+                DstColors.SelectionInactive = SelectionInactive;
+
+                DstColors.DarkGreySelection = ButtonDisabledBackground;
+                DstColors.DarkBlueBorder = ActiveCaptionBorderTop0;
+                DstColors.LightBlueBorder = ActiveCaptionBorderBottom;
+                DstColors.ActiveControl = ActiveCaptionBorderTop1;
             }
         }
 
@@ -75,15 +90,15 @@ namespace DarkUI.Config
 
             public void Use()
             {
-                Config.Consts.Padding = Padding;
-                Config.Consts.ScrollBarSize = ScrollBarSize;
-                Config.Consts.ArrowButtonSize = ArrowButtonSize;
-                Config.Consts.MinimumThumbSize = MinimumThumbSize;
-                Config.Consts.CheckBoxSize = CheckBoxSize;
-                Config.Consts.RadioButtonSize = RadioButtonSize;
-                Config.Consts.ToolWindowHeaderSize = ToolWindowHeaderSize;
-                Config.Consts.DocumentTabAreaSize = DocumentTabAreaSize;
-                Config.Consts.ToolWindowTabAreaSize = ToolWindowTabAreaSize;
+                DstConsts.Padding = Padding;
+                DstConsts.ScrollBarSize = ScrollBarSize;
+                DstConsts.ArrowButtonSize = ArrowButtonSize;
+                DstConsts.MinimumThumbSize = MinimumThumbSize;
+                DstConsts.CheckBoxSize = CheckBoxSize;
+                DstConsts.RadioButtonSize = RadioButtonSize;
+                DstConsts.ToolWindowHeaderSize = ToolWindowHeaderSize;
+                DstConsts.DocumentTabAreaSize = DocumentTabAreaSize;
+                DstConsts.ToolWindowTabAreaSize = ToolWindowTabAreaSize;
             }
         }
 

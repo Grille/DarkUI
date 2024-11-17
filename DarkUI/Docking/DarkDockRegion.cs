@@ -375,7 +375,7 @@ namespace DarkUI.Docking
                 return;
 
             // Fill body
-            using (var b = new SolidBrush(Colors.GreyBackground))
+            using (var b = new SolidBrush(Colors.ControlBackground))
             {
                 g.FillRectangle(b, ClientRectangle);
             }

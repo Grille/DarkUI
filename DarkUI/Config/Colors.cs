@@ -4,11 +4,12 @@ namespace DarkUI.Config
 {
     public static class Colors
     {
-        public static Color GreyBackground { get; set; }
-        public static Color HeaderBackground { get; set; }
-        public static Color BlueBackground { get; set; }
-        public static Color DarkBlueBackground { get; set; }
-        public static Color DarkBackground { get; set; }
+        public static Color ControlBackground { get; set; }
+        public static Color ControlBackgroundOddIndex { get; set; }
+        public static Color CaptionInactiveBackground { get; set; }
+        public static Color CaptionActiveBackground { get; set; }
+        public static Color DefaultButtonBackground { get; set; }
+        public static Color ControlPressed { get; set; }
         public static Color MediumBackground { get; set; }
         public static Color LightBackground { get; set; }
         public static Color LighterBackground { get; set; }
@@ -18,9 +19,19 @@ namespace DarkUI.Config
         public static Color LightText { get; set; }
         public static Color DisabledText { get; set; }
         public static Color BlueHighlight { get; set; }
-        public static Color BlueSelection { get; set; }
+        public static Color SelectionActive { get; set; }
+
+
+
         public static Color GreyHighlight { get; set; }
-        public static Color GreySelection { get; set; }
+        public static Color Scroolbar { get; set; }
+
+        public static Color CheckboxAmbivalentBackground { get; set; }
+
+        public static Color ControlBorder { get; set; }
+
+        public static Color SelectionInactive { get; set; }
+
         public static Color DarkGreySelection { get; set; }
         public static Color DarkBlueBorder { get; set; }
         public static Color LightBlueBorder { get; set; }

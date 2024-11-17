@@ -39,7 +39,7 @@ namespace DarkUI.Docking
                      ControlStyles.ResizeRedraw |
                      ControlStyles.UserPaint, true);
 
-            BackColor = Colors.GreyBackground;
+            BackColor = Colors.ControlBackground;
             base.Padding = new Padding(0, Consts.ToolWindowHeaderSize, 0, 0);
 
             UpdateCloseButton();
@@ -158,7 +158,7 @@ namespace DarkUI.Docking
             var g = e.Graphics;
 
             // Fill body
-            using (var b = new SolidBrush(Colors.GreyBackground))
+            using (var b = new SolidBrush(Colors.ControlBackground))
             {
                 g.FillRectangle(b, ClientRectangle);
             }
@@ -166,7 +166,7 @@ namespace DarkUI.Docking
             var isActive = IsActive();
 
             // Draw header
-            var bgColor = isActive ? Colors.BlueBackground : Colors.HeaderBackground;
+            var bgColor = isActive ? Colors.CaptionActiveBackground : Colors.CaptionInactiveBackground;
             var darkColor = isActive ? Colors.DarkBlueBorder : Colors.DarkBorder;
             var lightColor = isActive ? Colors.LightBlueBorder : Colors.LightBorder;
 

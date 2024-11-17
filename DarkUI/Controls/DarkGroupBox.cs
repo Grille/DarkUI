@@ -39,7 +39,7 @@ namespace DarkUI.Controls
             var stringSize = g.MeasureString(Text, Font);
 
             var textColor = Colors.LightText;
-            var fillColor = Colors.GreyBackground;
+            var fillColor = Colors.ControlBackground;
 
             using (var b = new SolidBrush(fillColor))
             {

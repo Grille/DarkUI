@@ -283,12 +283,12 @@ namespace DarkUI.Controls
             {
                 if ((DarkDropdownItem)item.Tag == SelectedItem)
                 {
-                    item.BackColor = Colors.DarkBlueBackground;
+                    item.BackColor = Colors.SelectionActive;
                     item.Font = new Font(Font, FontStyle.Bold);
                 }
                 else
                 {
-                    item.BackColor = Colors.GreyBackground;
+                    item.BackColor = Colors.ControlBackground;
                     item.Font = new Font(Font, FontStyle.Regular);
                 }
             }
@@ -423,13 +423,13 @@ namespace DarkUI.Controls
                     g.FillRectangle(b, ClientRectangle);
                 }
 
-                using (var b = new SolidBrush(Colors.DarkBackground))
+                using (var b = new SolidBrush(Colors.ControlPressed))
                 {
                     var arrowRect = new Rectangle(ClientRectangle.Right - DropdownIcons.small_arrow.Width - 8, ClientRectangle.Top, DropdownIcons.small_arrow.Width + 8, ClientRectangle.Height);
                     g.FillRectangle(b, arrowRect);
                 }
 
-                using (var p = new Pen(Colors.BlueSelection, 1))
+                using (var p = new Pen(Colors.SelectionActive, 1))
                 {
                     var modRect = new Rectangle(ClientRectangle.Left, ClientRectangle.Top, ClientRectangle.Width - 1 - DropdownIcons.small_arrow.Width - 8, ClientRectangle.Height - 1);
                     g.DrawRectangle(p, modRect);
@@ -444,7 +444,7 @@ namespace DarkUI.Controls
                     g.FillRectangle(b, ClientRectangle);
                 }
 
-                using (var b = new SolidBrush(Colors.BlueSelection))
+                using (var b = new SolidBrush(Colors.SelectionActive))
                 {
                     var arrowRect = new Rectangle(ClientRectangle.Right - DropdownIcons.small_arrow.Width - 8, ClientRectangle.Top, DropdownIcons.small_arrow.Width + 8, ClientRectangle.Height);
                     g.FillRectangle(b, arrowRect);

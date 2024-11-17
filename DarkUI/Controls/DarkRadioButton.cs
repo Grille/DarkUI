@@ -257,28 +257,28 @@ namespace DarkUI.Controls
                 if (Focused)
                 {
                     borderColor = Colors.BlueHighlight;
-                    fillColor = Colors.BlueSelection;
+                    fillColor = Colors.SelectionActive;
                 }
 
                 if (_controlState == DarkControlState.Hover)
                 {
                     borderColor = Colors.BlueHighlight;
-                    fillColor = Colors.BlueSelection;
+                    fillColor = Colors.SelectionActive;
                 }
                 else if (_controlState == DarkControlState.Pressed)
                 {
                     borderColor = Colors.GreyHighlight;
-                    fillColor = Colors.GreySelection;
+                    fillColor = Colors.CheckboxAmbivalentBackground;
                 }
             }
             else
             {
                 textColor = Colors.DisabledText;
                 borderColor = Colors.GreyHighlight;
-                fillColor = Colors.GreySelection;
+                fillColor = Colors.CheckboxAmbivalentBackground;
             }
 
-            using (var b = new SolidBrush(Colors.GreyBackground))
+            using (var b = new SolidBrush(Colors.ControlBackground))
             {
                 g.FillRectangle(b, rect);
             }

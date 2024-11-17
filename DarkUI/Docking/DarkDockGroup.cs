@@ -629,7 +629,7 @@ namespace DarkUI.Docking
         {
             var g = e.Graphics;
 
-            using (var b = new SolidBrush(Colors.GreyBackground))
+            using (var b = new SolidBrush(Colors.ControlBackground))
             {
                 g.FillRectangle(b, ClientRectangle);
             }
@@ -654,7 +654,7 @@ namespace DarkUI.Docking
             {
                 // Color divider
                 var isActiveGroup = DockPanel.ActiveGroup == this;
-                var divColor = isActiveGroup ? Colors.BlueSelection : Colors.GreySelection;
+                var divColor = isActiveGroup ? Colors.SelectionActive : Colors.SelectionInactive;
                 using (var b = new SolidBrush(divColor))
                 {
                     var divRect = new Rectangle(_tabArea.ClientRectangle.Left, _tabArea.ClientRectangle.Bottom - 2, _tabArea.ClientRectangle.Width, 2);
@@ -683,10 +683,10 @@ namespace DarkUI.Docking
             var isVisibleTab = VisibleContent == tab.DockContent;
             var isActiveGroup = DockPanel.ActiveGroup == this;
 
-            var bgColor = isVisibleTab ? Colors.BlueSelection : Colors.DarkBackground;
+            var bgColor = isVisibleTab ? Colors.SelectionActive : Colors.ControlPressed;
 
             if (!isActiveGroup)
-                bgColor = isVisibleTab ? Colors.GreySelection : Colors.DarkBackground;
+                bgColor = isVisibleTab ? Colors.SelectionInactive : Colors.ControlPressed;
 
             if (tab.Hot && !isVisibleTab)
                 bgColor = Colors.MediumBackground;
@@ -751,7 +751,7 @@ namespace DarkUI.Docking
 
             var isVisibleTab = VisibleContent == tab.DockContent;
 
-            var bgColor = isVisibleTab ? Colors.GreyBackground : Colors.DarkBackground;
+            var bgColor = isVisibleTab ? Colors.ControlBackground : Colors.ControlPressed;
 
             if (tab.Hot && !isVisibleTab)
                 bgColor = Colors.MediumBackground;

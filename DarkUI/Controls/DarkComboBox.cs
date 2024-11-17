@@ -112,7 +112,7 @@ namespace DarkUI.Controls
                 var rect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);
 
                 var textColor = Colors.LightText;
-                var borderColor = Colors.GreySelection;
+                var borderColor = Colors.ControlBorder;
                 var fillColor = Colors.LightBackground;
 
                 if (Focused && TabStop)
@@ -178,7 +178,7 @@ namespace DarkUI.Controls
             if ((e.State & DrawItemState.Selected) == DrawItemState.Selected ||
                 (e.State & DrawItemState.Focus) == DrawItemState.Focus ||
                 (e.State & DrawItemState.NoFocusRect) != DrawItemState.NoFocusRect)
-                fillColor = Colors.BlueSelection;
+                fillColor = Colors.SelectionActive;
 
             using (var b = new SolidBrush(fillColor))
             {

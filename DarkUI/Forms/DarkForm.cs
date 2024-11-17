@@ -34,7 +34,7 @@ namespace DarkUI.Forms
 
         public DarkForm()
         {
-            BackColor = Colors.GreyBackground;
+            BackColor = Colors.ControlBackground;
         }
 
         #endregion

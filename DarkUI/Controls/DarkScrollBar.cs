@@ -521,7 +521,7 @@ namespace DarkUI.Controls
             // Draw thumb
             if (Enabled)
             {
-                var scrollColor = _thumbHot ? Colors.GreyHighlight : Colors.GreySelection;
+                var scrollColor = _thumbHot ? Colors.GreyHighlight : Colors.Scroolbar;
 
                 if (_isScrolling)
                     scrollColor = Colors.ActiveControl;

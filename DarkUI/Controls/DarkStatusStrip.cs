@@ -11,7 +11,7 @@ namespace DarkUI.Controls
         public DarkStatusStrip()
         {
             AutoSize = false;
-            BackColor = Colors.GreyBackground;
+            BackColor = Colors.ControlBackground;
             ForeColor = Colors.LightText;
             Padding = new Padding(0, 5, 0, 3);
             Size = new Size(Size.Width, 24);
@@ -26,7 +26,7 @@ namespace DarkUI.Controls
         {
             var g = e.Graphics;
 
-            using (var b = new SolidBrush(Colors.GreyBackground))
+            using (var b = new SolidBrush(Colors.ControlBackground))
             {
                 g.FillRectangle(b, ClientRectangle);
             }

@@ -83,13 +83,13 @@ namespace DarkUI.Controls
             var rect = ClientRectangle;
 
             // Fill body
-            using (var b = new SolidBrush(Colors.GreyBackground))
+            using (var b = new SolidBrush(Colors.ControlBackground))
             {
                 g.FillRectangle(b, rect);
             }
 
             // Draw header
-            var bgColor = ContainsFocus ? Colors.BlueBackground : Colors.HeaderBackground;
+            var bgColor = ContainsFocus ? Colors.CaptionActiveBackground : Colors.CaptionInactiveBackground;
             var darkColor = ContainsFocus ? Colors.DarkBlueBorder : Colors.DarkBorder;
             var lightColor = ContainsFocus ? Colors.LightBlueBorder : Colors.LightBorder;
 

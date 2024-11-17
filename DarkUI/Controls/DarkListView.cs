@@ -517,10 +517,10 @@ namespace DarkUI.Controls
 
                 // Background
                 var odd = i % 2 != 0;
-                var bgColor = !odd ? Colors.HeaderBackground : Colors.GreyBackground;
+                var bgColor = odd ? Colors.ControlBackgroundOddIndex : Colors.ControlBackground;
 
                 if (SelectedIndices.Count > 0 && SelectedIndices.Contains(i))
-                    bgColor = Focused ? Colors.BlueSelection : Colors.GreySelection;
+                    bgColor = Focused ? Colors.SelectionActive : Colors.SelectionInactive;
 
                 using (var b = new SolidBrush(bgColor))
                 {

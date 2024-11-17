@@ -310,8 +310,8 @@ namespace DarkUI.Controls
             var rect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);
 
             var textColor = Colors.LightText;
-            var borderColor = Colors.GreySelection;
-            var fillColor = _isDefault ? Colors.DarkBlueBackground : Colors.LightBackground;
+            var borderColor = Colors.ControlBorder;
+            var fillColor = _isDefault ? Colors.DefaultButtonBackground : Colors.LightBackground;
 
             if (Enabled)
             {
@@ -323,10 +323,10 @@ namespace DarkUI.Controls
                     switch (ButtonState)
                     {
                         case DarkControlState.Hover:
-                            fillColor = _isDefault ? Colors.BlueBackground : Colors.LighterBackground;
+                            fillColor = _isDefault ? Colors.CaptionActiveBackground : Colors.LighterBackground;
                             break;
                         case DarkControlState.Pressed:
-                            fillColor = _isDefault ? Colors.DarkBackground : Colors.DarkBackground;
+                            fillColor = _isDefault ? Colors.ControlPressed : Colors.ControlPressed;
                             break;
                     }
                 }
@@ -335,13 +335,13 @@ namespace DarkUI.Controls
                     switch (ButtonState)
                     {
                         case DarkControlState.Normal:
-                            fillColor = Colors.GreyBackground;
+                            fillColor = Colors.ControlBackground;
                             break;
                         case DarkControlState.Hover:
                             fillColor = Colors.MediumBackground;
                             break;
                         case DarkControlState.Pressed:
-                            fillColor = Colors.DarkBackground;
+                            fillColor = Colors.ControlPressed;
                             break;
                     }
                 }

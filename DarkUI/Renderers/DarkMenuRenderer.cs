@@ -15,7 +15,7 @@ namespace DarkUI.Renderers
         {
             base.Initialize(toolStrip);
 
-            toolStrip.BackColor = Colors.GreyBackground;
+            toolStrip.BackColor = Colors.ControlBackground;
             toolStrip.ForeColor = Colors.LightText;
         }
 
@@ -23,7 +23,7 @@ namespace DarkUI.Renderers
         {
             base.InitializeItem(item);
 
-            item.BackColor = Colors.GreyBackground;
+            item.BackColor = Colors.ControlBackground;
             item.ForeColor = Colors.LightText;
 
             if (item.GetType() == typeof(ToolStripSeparator))
@@ -39,7 +39,7 @@ namespace DarkUI.Renderers
         protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
         {
             var g = e.Graphics;
-            using (var b = new SolidBrush(Colors.GreyBackground))
+            using (var b = new SolidBrush(Colors.ControlBackground))
             {
                 g.FillRectangle(b, e.AffectedBounds);
             }
@@ -125,7 +125,7 @@ namespace DarkUI.Renderers
                 {
                     if (((ToolStripMenuItem)e.Item).DropDown.Visible && e.Item.IsOnDropDown == false)
                     {
-                        using (var b = new SolidBrush(Colors.GreySelection))
+                        using (var b = new SolidBrush(Colors.SelectionInactive))
                         {
                             g.FillRectangle(b, rect);
                         }

@@ -1204,13 +1204,13 @@ namespace DarkUI.Controls
             var rect = GetNodeFullRowArea(node);
 
             // 1. Draw background
-            var bgColor = node.Odd ? Colors.HeaderBackground : Colors.GreyBackground;
+            var bgColor = node.Odd ? Colors.ControlBackgroundOddIndex : Colors.ControlBackground;
 
             if (SelectedNodes.Count > 0 && SelectedNodes.Contains(node))
-                bgColor = Focused ? Colors.BlueSelection : Colors.GreySelection;
+                bgColor = Focused ? Colors.SelectionActive : Colors.SelectionInactive;
 
             if (IsDragging && _dropNode == node)
-                bgColor = Focused ? Colors.BlueSelection : Colors.GreySelection;
+                bgColor = Focused ? Colors.SelectionActive : Colors.SelectionInactive;
 
             using (var b = new SolidBrush(bgColor))
             {
