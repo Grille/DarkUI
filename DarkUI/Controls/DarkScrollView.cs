@@ -25,8 +25,8 @@ namespace DarkUI.Controls
             var g = e.Graphics;
 
             // Draw background
-            using (var b = new SolidBrush(BackColor))
-            {
+            { var b = GdiCache.Brush(BackColor);
+            
                 g.FillRectangle(b, ClientRectangle);
             }
 
@@ -40,8 +40,8 @@ namespace DarkUI.Controls
             // Draw the bit where the scrollbars meet
             if (_vScrollBar.Visible && _hScrollBar.Visible)
             {
-                using (var b = new SolidBrush(BackColor))
-                {
+                { var b = GdiCache.Brush(BackColor);
+                
                     var rect = new Rectangle(_hScrollBar.Right, _vScrollBar.Bottom, _vScrollBar.Width,
                                              _hScrollBar.Height);
 

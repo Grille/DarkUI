@@ -26,18 +26,20 @@ namespace DarkUI.Controls
         {
             var g = e.Graphics;
 
-            using (var b = new SolidBrush(Colors.ControlBackground))
-            {
+            { var b = GdiCache.Brush(Colors.ControlBackground);
+            
                 g.FillRectangle(b, ClientRectangle);
             }
 
-            using (var p = new Pen(Colors.DarkBorder))
             {
+                var p = GdiCache.Pen(Colors.DarkBorder);
+
                 g.DrawLine(p, ClientRectangle.Left, 0, ClientRectangle.Right, 0);
             }
 
-            using (var p = new Pen(Colors.LightBorder))
             {
+                var p = GdiCache.Pen(Colors.LightBorder);
+
                 g.DrawLine(p, ClientRectangle.Left, 1, ClientRectangle.Right, 1);
             }
         }

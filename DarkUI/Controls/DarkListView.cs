@@ -522,13 +522,13 @@ namespace DarkUI.Controls
                 if (SelectedIndices.Count > 0 && SelectedIndices.Contains(i))
                     bgColor = Focused ? Colors.SelectionActive : Colors.SelectionInactive;
 
-                using (var b = new SolidBrush(bgColor))
-                {
+                { var b = GdiCache.Brush(bgColor);
+                
                     g.FillRectangle(b, rect);
                 }
 
                 // DEBUG: Border
-                /*using (var p = new Pen(Colors.DarkBorder))
+                /*{var p = GdiCache.Pen(Colors.DarkBorder))
                 {
                     g.DrawLine(p, new Point(rect.Left, rect.Bottom - 1), new Point(rect.Right, rect.Bottom - 1));
                 }*/
@@ -540,8 +540,8 @@ namespace DarkUI.Controls
                 }
 
                 // Text
-                using (var b = new SolidBrush(Items[i].TextColor))
-                {
+                { var b = GdiCache.Brush(Items[i].TextColor);
+                
                     var stringFormat = new StringFormat
                     {
                         Alignment = StringAlignment.Near,

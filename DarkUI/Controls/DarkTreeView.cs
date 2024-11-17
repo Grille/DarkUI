@@ -1212,8 +1212,8 @@ namespace DarkUI.Controls
             if (IsDragging && _dropNode == node)
                 bgColor = Focused ? Colors.SelectionActive : Colors.SelectionInactive;
 
-            using (var b = new SolidBrush(bgColor))
-            {
+            { var b = GdiCache.Brush(bgColor);
+            
                 g.FillRectangle(b, rect);
             }
 
@@ -1250,8 +1250,8 @@ namespace DarkUI.Controls
             }
 
             // 4. Draw text
-            using (var b = new SolidBrush(Colors.LightText))
-            {
+            { var b = GdiCache.Brush(Colors.LightText);
+            
                 var stringFormat = new StringFormat
                 {
                     Alignment = StringAlignment.Near,

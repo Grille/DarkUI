@@ -278,23 +278,23 @@ namespace DarkUI.Controls
                 fillColor = Colors.CheckboxAmbivalentBackground;
             }
 
-            using (var b = new SolidBrush(Colors.ControlBackground))
-            {
+            { var b = GdiCache.Brush(Colors.ControlBackground);
+            
                 g.FillRectangle(b, rect);
             }
 
             g.SmoothingMode = SmoothingMode.HighQuality;
 
-            using (var p = new Pen(borderColor))
-            {
+            { var p = GdiCache.Pen(borderColor);
+            
                 var boxRect = new Rectangle(0, (rect.Height / 2) - (size / 2), size, size);
                 g.DrawEllipse(p, boxRect);
             }
 
             if (Checked)
             {
-                using (var b = new SolidBrush(fillColor))
-                {
+                { var b = GdiCache.Brush(fillColor);
+                
                     Rectangle boxRect = new Rectangle(3, (rect.Height / 2) - ((size - 7) / 2) - 1, size - 6, size - 6);
                     g.FillEllipse(b, boxRect);
                 }
@@ -302,8 +302,8 @@ namespace DarkUI.Controls
 
             g.SmoothingMode = SmoothingMode.Default;
 
-            using (var b = new SolidBrush(textColor))
-            {
+            { var b = GdiCache.Brush(textColor);
+            
                 var stringFormat = new StringFormat
                 {
                     LineAlignment = StringAlignment.Center,

@@ -40,8 +40,8 @@ namespace DarkUI.Renderers
 
             if (e.ToolStrip.GetType() == typeof(ToolStripOverflow))
             {
-                using (var p = new Pen(Colors.ControlBackground))
-                {
+                { var p = GdiCache.Pen(Colors.ControlBackground);
+                
                     var rect = new Rectangle(e.AffectedBounds.Left, e.AffectedBounds.Top, e.AffectedBounds.Width - 1, e.AffectedBounds.Height - 1);
                     g.DrawRectangle(p, rect);
                 }
@@ -62,8 +62,8 @@ namespace DarkUI.Renderers
 
             if (e.Item.Selected || e.Item.Pressed)
             {
-                using (var b = new SolidBrush(Colors.SelectionInactive))
-                {
+                { var b = GdiCache.Brush(Colors.SelectionInactive);
+                
                     g.FillRectangle(b, rect);
                 }
             }
@@ -74,8 +74,8 @@ namespace DarkUI.Renderers
 
                 if (castItem.Checked)
                 {
-                    using (var b = new SolidBrush(Colors.SelectionInactive))
-                    {
+                    { var b = GdiCache.Brush(Colors.SelectionInactive);
+                    
                         g.FillRectangle(b, rect);
                     }
                 }
@@ -83,8 +83,8 @@ namespace DarkUI.Renderers
                 if (castItem.Checked && castItem.Selected)
                 {
                     var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - 1, rect.Height - 1);
-                    using (var p = new Pen(Colors.GreyHighlight))
-                    {
+                    { var p = GdiCache.Pen(Colors.GreyHighlight);
+                    
                         g.DrawRectangle(p, modRect);
                     }
                 }
@@ -99,8 +99,8 @@ namespace DarkUI.Renderers
 
             if (e.Item.Selected || e.Item.Pressed)
             {
-                using (var b = new SolidBrush(Colors.SelectionInactive))
-                {
+                { var b = GdiCache.Brush(Colors.SelectionInactive);
+                
                     g.FillRectangle(b, rect);
                 }
             }
@@ -132,13 +132,13 @@ namespace DarkUI.Renderers
 
             var rect = new Rectangle(3, 3, 2, e.Item.Height - 4);
 
-            using (var p = new Pen(Colors.DarkBorder))
-            {
+            { var p = GdiCache.Pen(Colors.DarkBorder);
+            
                 g.DrawLine(p, rect.Left, rect.Top, rect.Left, rect.Height);
             }
 
-            using (var p = new Pen(Colors.LightBorder))
-            {
+            { var p = GdiCache.Pen(Colors.LightBorder);
+            
                 g.DrawLine(p, rect.Left + 1, rect.Top, rect.Left + 1, rect.Height);
             }
         }
@@ -170,7 +170,7 @@ namespace DarkUI.Renderers
             if (castItem.Pressed)
                 bgColor = StyleColors.Medium(style);
 
-            using (var b = new SolidBrush(bgColor))
+            {var b = GdiCache.Brush(bgColor))
             {
                 g.FillRectangle(b, rect);
             }
@@ -181,7 +181,7 @@ namespace DarkUI.Renderers
             if (castItem.Pressed)
                 fgColor = StyleColors.Strong(style);
 
-            using (var p = new Pen(fgColor))
+            {var p = GdiCache.Pen(fgColor))
             {
                 var modRect = new Rectangle(1, 0, e.Item.Width - 6, e.Item.Height - 1);
                 g.DrawRectangle(p, modRect);

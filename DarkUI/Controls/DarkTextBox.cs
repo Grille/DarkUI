@@ -1,4 +1,8 @@
 ﻿using DarkUI.Config;
+
+using System;
+using System.ComponentModel;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace DarkUI.Controls
@@ -9,13 +13,18 @@ namespace DarkUI.Controls
 
         public DarkTextBox()
         {
-            BackColor = Colors.LightBackground;
-            ForeColor = Colors.LightText;
             Padding = new Padding(2, 2, 2, 2);
             BorderStyle = BorderStyle.FixedSingle;
         }
 
-        #endregion
+        protected override void OnHandleCreated(EventArgs e)
+        {
+            BackColor = Colors.LightBackground;
+            ForeColor = Colors.LightText;
 
+            base.OnHandleCreated(e);
+        }
+
+        #endregion
     }
 }

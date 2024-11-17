@@ -472,13 +472,13 @@ namespace DarkUI.Controls
             var g = e.Graphics;
 
             // DEBUG: Scrollbar bg
-            /*using (var b = new SolidBrush(Colors.MediumBackground))
+            /*{var b = GdiCache.Brush(Colors.MediumBackground))
             {
                 g.FillRectangle(b, ClientRectangle);
             }*/
 
             // DEBUG: Arrow backgrounds
-            /*using (var b = new SolidBrush(Color.White))
+            /*{var b = GdiCache.Brush(Color.White))
             {
                 g.FillRectangle(b, _upArrowArea);
                 g.FillRectangle(b, _downArrowArea);
@@ -526,8 +526,8 @@ namespace DarkUI.Controls
                 if (_isScrolling)
                     scrollColor = Colors.ActiveControl;
 
-                using (var b = new SolidBrush(scrollColor))
-                {
+                { var b = GdiCache.Brush(scrollColor);
+                
                     g.FillRectangle(b, _thumbArea);
                 }
             }

@@ -312,28 +312,28 @@ namespace DarkUI.Controls
                 fillColor = Colors.CheckboxAmbivalentBackground;
             }
 
-            using (var b = new SolidBrush(Colors.ControlBackground))
-            {
+            { var b = GdiCache.Brush(Colors.ControlBackground);
+            
                 g.FillRectangle(b, rect);
             }
 
-            using (var p = new Pen(borderColor))
-            {
+            { var p = GdiCache.Pen(borderColor);
+            
                 var boxRect = new Rectangle(0, (rect.Height / 2) - (size / 2), size, size);
                 g.DrawRectangle(p, boxRect);
             }
 
             if (Checked)
             {
-                using (var b = new SolidBrush(fillColor))
-                {
+                { var b = GdiCache.Brush(fillColor);
+                
                     Rectangle boxRect = new Rectangle(2, (rect.Height / 2) - ((size - 4) / 2), size - 3, size - 3);
                     g.FillRectangle(b, boxRect);
                 }
             }
 
-            using (var b = new SolidBrush(textColor))
-            {
+            { var b = GdiCache.Brush(textColor);
+            
                 var stringFormat = new StringFormat
                 {
                     LineAlignment = StringAlignment.Center,

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-
+using System.Windows.Forms;
+using DarkUI;
 using DstColors = DarkUI.Config.Colors;
 using DstConsts = DarkUI.Config.Consts;
 
@@ -11,6 +12,8 @@ namespace DarkUI.Config
 {
     public class Theme
     {
+        public bool CustomRenderersEnabled;
+
         public class CColors
         {
             public Color ControlBackground { get; set; }
@@ -37,11 +40,11 @@ namespace DarkUI.Config
             public Color SelectionInactive { get; set; }
 
             public Color ButtonDisabledBackground { get; set; }
-            public Color ActiveCaptionBorderTop0 { get; set; }
+            public Color ActiveCaptionBorderTop { get; set; }
             public Color ActiveCaptionBorderBottom { get; set; }
-            public Color ActiveCaptionBorderTop1 { get; set; }
+            public Color ActiveControl { get; set; }
 
-            public void Use()
+            internal void Use()
             {
                 DstColors.ControlBackground = ControlBackground;
                 DstColors.ControlBackgroundOddIndex = ControlBackgroundOddIndex;
@@ -67,9 +70,9 @@ namespace DarkUI.Config
                 DstColors.SelectionInactive = SelectionInactive;
 
                 DstColors.DarkGreySelection = ButtonDisabledBackground;
-                DstColors.DarkBlueBorder = ActiveCaptionBorderTop0;
+                DstColors.DarkBlueBorder = ActiveCaptionBorderTop;
                 DstColors.LightBlueBorder = ActiveCaptionBorderBottom;
-                DstColors.ActiveControl = ActiveCaptionBorderTop1;
+                DstColors.ActiveControl = ActiveControl;
             }
         }
 
@@ -88,7 +91,7 @@ namespace DarkUI.Config
             public int DocumentTabAreaSize { get; set; }
             public int ToolWindowTabAreaSize { get; set; }
 
-            public void Use()
+            internal void Use()
             {
                 DstConsts.Padding = Padding;
                 DstConsts.ScrollBarSize = ScrollBarSize;
@@ -114,6 +117,8 @@ namespace DarkUI.Config
         {
             Colors.Use();
             Consts.Use();
+
+            GdiCache.Invalidate();
         }
     }
 }

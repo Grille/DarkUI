@@ -397,8 +397,8 @@ namespace DarkUI.Controls
             var g = e.Graphics;
 
             // Draw background
-            using (var b = new SolidBrush(Colors.MediumBackground))
-            {
+            { var b = GdiCache.Brush(Colors.MediumBackground);
+            
                 g.FillRectangle(b, ClientRectangle);
             }
 
@@ -407,8 +407,8 @@ namespace DarkUI.Controls
             {
                 if (ShowBorder)
                 {
-                    using (var p = new Pen(Colors.LightBorder, 1))
                     {
+                        var p = GdiCache.Pen(Colors.LightBorder, 1);
                         var modRect = new Rectangle(ClientRectangle.Left, ClientRectangle.Top, ClientRectangle.Width - 1, ClientRectangle.Height - 1);
                         g.DrawRectangle(p, modRect);
                     }
@@ -418,19 +418,20 @@ namespace DarkUI.Controls
             // Draw hover state
             if (ControlState == DarkControlState.Hover)
             {
-                using (var b = new SolidBrush(Colors.DarkBorder))
-                {
+                { var b = GdiCache.Brush(Colors.DarkBorder);
+                
                     g.FillRectangle(b, ClientRectangle);
                 }
 
-                using (var b = new SolidBrush(Colors.ControlPressed))
-                {
+                { var b = GdiCache.Brush(Colors.ControlPressed);
+                
                     var arrowRect = new Rectangle(ClientRectangle.Right - DropdownIcons.small_arrow.Width - 8, ClientRectangle.Top, DropdownIcons.small_arrow.Width + 8, ClientRectangle.Height);
                     g.FillRectangle(b, arrowRect);
                 }
 
-                using (var p = new Pen(Colors.SelectionActive, 1))
-                {
+                { 
+                var p = GdiCache.Pen(Colors.SelectionActive, 1);
+                
                     var modRect = new Rectangle(ClientRectangle.Left, ClientRectangle.Top, ClientRectangle.Width - 1 - DropdownIcons.small_arrow.Width - 8, ClientRectangle.Height - 1);
                     g.DrawRectangle(p, modRect);
                 }
@@ -439,13 +440,13 @@ namespace DarkUI.Controls
             // Draw pressed state
             if (ControlState == DarkControlState.Pressed)
             {
-                using (var b = new SolidBrush(Colors.DarkBorder))
-                {
+                { var b = GdiCache.Brush(Colors.DarkBorder);
+                
                     g.FillRectangle(b, ClientRectangle);
                 }
 
-                using (var b = new SolidBrush(Colors.SelectionActive))
-                {
+                { var b = GdiCache.Brush(Colors.SelectionActive);
+                
                     var arrowRect = new Rectangle(ClientRectangle.Right - DropdownIcons.small_arrow.Width - 8, ClientRectangle.Top, DropdownIcons.small_arrow.Width + 8, ClientRectangle.Height);
                     g.FillRectangle(b, arrowRect);
                 }
@@ -469,8 +470,8 @@ namespace DarkUI.Controls
                 }
 
                 // Draw Text
-                using (var b = new SolidBrush(Colors.LightText))
-                {
+                { var b = GdiCache.Brush(Colors.LightText);
+                
                     var stringFormat = new StringFormat
                     {
                         Alignment = StringAlignment.Near,

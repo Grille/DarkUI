@@ -352,19 +352,19 @@ namespace DarkUI.Controls
                 fillColor = Colors.DarkGreySelection;
             }
 
-            using (var b = new SolidBrush(fillColor))
-            {
+            { var b = GdiCache.Brush(fillColor);
+            
                 g.FillRectangle(b, rect);
             }
 
             if (ButtonStyle == DarkButtonStyle.Normal)
             {
-                using (var p = new Pen(borderColor, 1))
-                {
-                    var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - 1, rect.Height - 1);
+                var borderPen = GdiCache.Pen(borderColor, 1);
 
-                    g.DrawRectangle(p, modRect);
-                }
+                var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - 1, rect.Height - 1);
+
+                g.DrawRectangle(borderPen, modRect);
+
             }
 
             var textOffsetX = 0;
@@ -399,8 +399,8 @@ namespace DarkUI.Controls
                 g.DrawImageUnscaled(Image, x, y);
             }
 
-            using (var b = new SolidBrush(textColor))
-            {
+            { var b = GdiCache.Brush(textColor);
+            
                 var modRect = new Rectangle(rect.Left + textOffsetX + Padding.Left,
                                             rect.Top + textOffsetY + Padding.Top, rect.Width - Padding.Horizontal,
                                             rect.Height - Padding.Vertical);

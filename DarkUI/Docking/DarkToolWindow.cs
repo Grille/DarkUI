@@ -158,8 +158,8 @@ namespace DarkUI.Docking
             var g = e.Graphics;
 
             // Fill body
-            using (var b = new SolidBrush(Colors.ControlBackground))
-            {
+            { var b = GdiCache.Brush(Colors.ControlBackground);
+            
                 g.FillRectangle(b, ClientRectangle);
             }
 
@@ -170,20 +170,20 @@ namespace DarkUI.Docking
             var darkColor = isActive ? Colors.DarkBlueBorder : Colors.DarkBorder;
             var lightColor = isActive ? Colors.LightBlueBorder : Colors.LightBorder;
 
-            using (var b = new SolidBrush(bgColor))
-            {
+            { var b = GdiCache.Brush(bgColor);
+            
                 var bgRect = new Rectangle(0, 0, ClientRectangle.Width, Consts.ToolWindowHeaderSize);
                 g.FillRectangle(b, bgRect);
             }
 
-            using (var p = new Pen(darkColor))
-            {
+            { var p = GdiCache.Pen(darkColor);
+            
                 g.DrawLine(p, ClientRectangle.Left, 0, ClientRectangle.Right, 0);
                 g.DrawLine(p, ClientRectangle.Left, Consts.ToolWindowHeaderSize - 1, ClientRectangle.Right, Consts.ToolWindowHeaderSize - 1);
             }
 
-            using (var p = new Pen(lightColor))
-            {
+            { var p = GdiCache.Pen(lightColor);
+            
                 g.DrawLine(p, ClientRectangle.Left, 1, ClientRectangle.Right, 1);
             }
 
@@ -197,8 +197,8 @@ namespace DarkUI.Docking
             }
 
             // Draw text
-            using (var b = new SolidBrush(Colors.LightText))
-            {
+            { var b = GdiCache.Brush(Colors.LightText);
+            
                 var textRect = new Rectangle(xOffset, 0, ClientRectangle.Width - 4 - xOffset, Consts.ToolWindowHeaderSize);
 
                 var format = new StringFormat

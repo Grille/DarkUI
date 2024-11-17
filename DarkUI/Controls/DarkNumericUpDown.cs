@@ -104,8 +104,8 @@ namespace DarkUI.Controls
 
             var fillColor = Colors.CaptionInactiveBackground;
 
-            using (var b = new SolidBrush(fillColor))
-            {
+            { var b = GdiCache.Brush(fillColor);
+            
                 g.FillRectangle(b, rect);
             }
 
@@ -143,8 +143,9 @@ namespace DarkUI.Controls
             if (Focused && TabStop)
                 borderColor = Colors.BlueHighlight;
 
-            using (var p = new Pen(borderColor, 1))
             {
+                var p = GdiCache.Pen(borderColor, 1);
+            
                 var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - 1, rect.Height - 1);
                 g.DrawRectangle(p, modRect);
             }

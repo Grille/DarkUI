@@ -50,8 +50,8 @@ namespace DarkUI.Forms
 
             var g = e.Graphics;
 
-            using (var p = new Pen(Colors.DarkBorder))
-            {
+            { var p = GdiCache.Pen(Colors.DarkBorder);
+            
                 var modRect = new Rectangle(ClientRectangle.Location, new Size(ClientRectangle.Width - 1, ClientRectangle.Height - 1));
                 g.DrawRectangle(p, modRect);
             }

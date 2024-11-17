@@ -12,6 +12,8 @@ namespace DarkUI.Config
 
         public static Theme Default { get; }
 
+        public static Theme System { get; }
+
         public static Theme Dark { get; }
 
         static Themes()
@@ -32,7 +34,7 @@ namespace DarkUI.Config
             var darkColors = new Theme.CColors()
             {
                 ControlBackground = Color.FromArgb(60, 63, 65),
-                ControlBackgroundOddIndex = Color.FromArgb(60, 63, 65),
+                ControlBackgroundOddIndex = Color.FromArgb(69, 73, 74),
                 CaptionInactiveBackground = Color.FromArgb(57, 60, 62),
                 CaptionActiveBackground = Color.FromArgb(66, 77, 95),
                 X0 = Color.FromArgb(52, 57, 66),
@@ -46,16 +48,16 @@ namespace DarkUI.Config
                 Text = Color.FromArgb(220, 220, 220),
                 TextDisabled = Color.FromArgb(153, 153, 153),
                 BlueHighlight = Color.FromArgb(104, 151, 187),
-                SelectionActive = Color.FromArgb(75, 110, 175),
+                SelectionActive = SystemColors.Highlight,// Color.FromArgb(75, 110, 175),
                 CheckboxDisabled = Color.FromArgb(122, 128, 132),
                 Scroolbar = Color.FromArgb(92, 92, 92),
                 ControlBorder = Color.FromArgb(92, 92, 92),
                 CheckboxAmbivalentBackground = Color.FromArgb(92, 92, 92),
                 SelectionInactive = Color.FromArgb(92, 92, 92),
                 ButtonDisabledBackground = Color.FromArgb(82, 82, 82),
-                ActiveCaptionBorderTop0 = Color.FromArgb(51, 61, 78),
+                ActiveCaptionBorderTop = Color.FromArgb(51, 61, 78),
                 ActiveCaptionBorderBottom = Color.FromArgb(86, 97, 114),
-                ActiveCaptionBorderTop1 = Color.FromArgb(159, 178, 196),
+                ActiveControl = Color.FromArgb(159, 178, 196),
             };
 
             var systemColors = new Theme.CColors()
@@ -70,8 +72,8 @@ namespace DarkUI.Config
                 ButtonBackground = SystemColors.Control,
                 ButtonHighlight = SystemColors.Control,
                 LightestBackground = SystemColors.Control,
-                BorderLight = SystemColors.ActiveBorder,
-                BorderDark = SystemColors.ActiveBorder,
+                BorderLight = Color.White,
+                BorderDark = Color.Gray,
                 Text = SystemColors.ControlText,
                 TextDisabled = SystemColors.GrayText,
                 BlueHighlight = SystemColors.Highlight,
@@ -82,12 +84,12 @@ namespace DarkUI.Config
                 CheckboxAmbivalentBackground = SystemColors.Control,
                 SelectionInactive = SystemColors.Highlight,
                 ButtonDisabledBackground = SystemColors.Control,
-                ActiveCaptionBorderTop0 = SystemColors.ActiveBorder,
-                ActiveCaptionBorderBottom = SystemColors.ActiveBorder,
-                ActiveCaptionBorderTop1 = SystemColors.ActiveBorder,
+                ActiveCaptionBorderTop = Color.Gray,
+                ActiveCaptionBorderBottom = Color.White,
+                ActiveControl = Color.Red,
             };
 
-
+            /*
             darkColors = new Theme.CColors()
             {
                 ControlBackground = Color.FromArgb(60, 63, 65),
@@ -116,9 +118,10 @@ namespace DarkUI.Config
                 ActiveCaptionBorderBottom = Color.FromArgb(86, 97, 114),
                 ActiveCaptionBorderTop1 = Color.FromArgb(159, 178, 196),
             };
-            
+            */
 
-            Dark = new Theme(systemColors, DefaultConsts);
+            Dark = new Theme(darkColors, DefaultConsts);
+            System = new Theme(systemColors, DefaultConsts);
 
             Default = Dark;
         }

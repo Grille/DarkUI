@@ -118,16 +118,17 @@ namespace DarkUI.Controls
                 if (Focused && TabStop)
                     borderColor = Colors.BlueHighlight;
 
-                using (var b = new SolidBrush(fillColor))
-                {
+                { var b = GdiCache.Brush(fillColor);
+                
                     g.FillRectangle(b, rect);
                 }
 
-                using (var p = new Pen(borderColor, 1))
                 {
+                    var borderPen = GdiCache.Pen(borderColor, 1);
                     var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - 1, rect.Height - 1);
-                    g.DrawRectangle(p, modRect);
+                    g.DrawRectangle(borderPen, modRect);
                 }
+
 
                 var icon = ScrollIcons.scrollbar_arrow_hot;
                 g.DrawImageUnscaled(icon,
@@ -136,8 +137,8 @@ namespace DarkUI.Controls
 
                 var text = SelectedItem != null ? SelectedItem.ToString() : Text;
 
-                using (var b = new SolidBrush(textColor))
-                {
+                { var b = GdiCache.Brush(textColor);
+                
                     var padding = 2;
 
                     var modRect = new Rectangle(rect.Left + padding,
@@ -180,8 +181,8 @@ namespace DarkUI.Controls
                 (e.State & DrawItemState.NoFocusRect) != DrawItemState.NoFocusRect)
                 fillColor = Colors.SelectionActive;
 
-            using (var b = new SolidBrush(fillColor))
-            {
+            { var b = GdiCache.Brush(fillColor);
+            
                 g.FillRectangle(b, rect);
             }
 
@@ -189,8 +190,8 @@ namespace DarkUI.Controls
             {
                 var text = Items[e.Index].ToString();
 
-                using (var b = new SolidBrush(textColor))
-                {
+                { var b = GdiCache.Brush(textColor);
+                
                     var padding = 2;
 
                     var modRect = new Rectangle(rect.Left + padding,

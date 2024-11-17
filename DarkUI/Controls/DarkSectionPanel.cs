@@ -83,8 +83,8 @@ namespace DarkUI.Controls
             var rect = ClientRectangle;
 
             // Fill body
-            using (var b = new SolidBrush(Colors.ControlBackground))
-            {
+            { var b = GdiCache.Brush(Colors.ControlBackground);
+            
                 g.FillRectangle(b, rect);
             }
 
@@ -93,27 +93,27 @@ namespace DarkUI.Controls
             var darkColor = ContainsFocus ? Colors.DarkBlueBorder : Colors.DarkBorder;
             var lightColor = ContainsFocus ? Colors.LightBlueBorder : Colors.LightBorder;
 
-            using (var b = new SolidBrush(bgColor))
-            {
+            { var b = GdiCache.Brush(bgColor);
+            
                 var bgRect = new Rectangle(0, 0, rect.Width, 25);
                 g.FillRectangle(b, bgRect);
             }
 
-            using (var p = new Pen(darkColor))
-            {
+            { var p = GdiCache.Pen(darkColor);
+            
                 g.DrawLine(p, rect.Left, 0, rect.Right, 0);
                 g.DrawLine(p, rect.Left, 25 - 1, rect.Right, 25 - 1);
             }
 
-            using (var p = new Pen(lightColor))
-            {
+            { var p = GdiCache.Pen(lightColor);
+            
                 g.DrawLine(p, rect.Left, 1, rect.Right, 1);
             }
 
             var xOffset = 3;
 
-            using (var b = new SolidBrush(Colors.LightText))
-            {
+            { var b = GdiCache.Brush(Colors.LightText);
+            
                 var textRect = new Rectangle(xOffset, 0, rect.Width - 4 - xOffset, 25);
 
                 var format = new StringFormat
@@ -128,11 +128,11 @@ namespace DarkUI.Controls
             }
 
             // Draw border
-            using (var p = new Pen(Colors.DarkBorder, 1))
+            var borderPen = GdiCache.Pen(Colors.DarkBorder, 1);
             {
                 var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - 1, rect.Height - 1);
 
-                g.DrawRectangle(p, modRect);
+                g.DrawRectangle(borderPen, modRect);
             }
         }
 

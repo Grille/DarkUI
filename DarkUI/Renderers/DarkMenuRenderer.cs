@@ -39,8 +39,8 @@ namespace DarkUI.Renderers
         protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
         {
             var g = e.Graphics;
-            using (var b = new SolidBrush(Colors.ControlBackground))
-            {
+            { var b = GdiCache.Brush(Colors.ControlBackground);
+            
                 g.FillRectangle(b, e.AffectedBounds);
             }
         }
@@ -51,8 +51,8 @@ namespace DarkUI.Renderers
 
             var rect = new Rectangle(0, 0, e.ToolStrip.Width - 1, e.ToolStrip.Height - 1);
 
-            using (var p = new Pen(Colors.LightBorder))
-            {
+            { var p = GdiCache.Pen(Colors.LightBorder);
+            
                 g.DrawRectangle(p, rect);
             }
         }
@@ -64,13 +64,13 @@ namespace DarkUI.Renderers
             var rect = new Rectangle(e.ImageRectangle.Left - 2, e.ImageRectangle.Top - 2,
                                          e.ImageRectangle.Width + 4, e.ImageRectangle.Height + 4);
 
-            using (var b = new SolidBrush(Colors.LightBorder))
-            {
+            { var b = GdiCache.Brush(Colors.LightBorder);
+            
                 g.FillRectangle(b, rect);
             }
 
-            using (var p = new Pen(Colors.BlueHighlight))
-            {
+            { var p = GdiCache.Pen(Colors.BlueHighlight);
+            
                 var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - 1, rect.Height - 1);
                 g.DrawRectangle(p, modRect);
             }
@@ -87,8 +87,8 @@ namespace DarkUI.Renderers
 
             var rect = new Rectangle(1, 3, e.Item.Width, 1);
 
-            using (var b = new SolidBrush(Colors.LightBorder))
-            {
+            { var b = GdiCache.Brush(Colors.LightBorder);
+            
                 g.FillRectangle(b, rect);
             }
         }
@@ -115,8 +115,8 @@ namespace DarkUI.Renderers
                 // Normal item
                 var rect = new Rectangle(2, 0, e.Item.Width - 3, e.Item.Height);
 
-                using (var b = new SolidBrush(bgColor))
-                {
+                { var b = GdiCache.Brush(bgColor);
+                
                     g.FillRectangle(b, rect);
                 }
 
@@ -125,8 +125,8 @@ namespace DarkUI.Renderers
                 {
                     if (((ToolStripMenuItem)e.Item).DropDown.Visible && e.Item.IsOnDropDown == false)
                     {
-                        using (var b = new SolidBrush(Colors.SelectionInactive))
-                        {
+                        { var b = GdiCache.Brush(Colors.SelectionInactive);
+                        
                             g.FillRectangle(b, rect);
                         }
                     }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtDocument = new System.Windows.Forms.TextBox();
+            txtDocument = new DarkUI.Controls.DarkTextBox();
             cmbOptions = new DarkUI.Controls.DarkDropdownList();
             SuspendLayout();
             // 
@@ -73,7 +73,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtDocument;
+        private DarkUI.Controls.DarkTextBox txtDocument;
         private DarkUI.Controls.DarkDropdownList cmbOptions;
     }
 }

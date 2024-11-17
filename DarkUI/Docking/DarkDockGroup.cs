@@ -629,16 +629,16 @@ namespace DarkUI.Docking
         {
             var g = e.Graphics;
 
-            using (var b = new SolidBrush(Colors.ControlBackground))
-            {
+            { var b = GdiCache.Brush(Colors.ControlBackground);
+            
                 g.FillRectangle(b, ClientRectangle);
             }
 
             if (!_tabArea.Visible)
                 return;
 
-            using (var b = new SolidBrush(Colors.MediumBackground))
-            {
+            { var b = GdiCache.Brush(Colors.MediumBackground);
+            
                 g.FillRectangle(b, _tabArea.ClientRectangle);
             }
 
@@ -655,8 +655,8 @@ namespace DarkUI.Docking
                 // Color divider
                 var isActiveGroup = DockPanel.ActiveGroup == this;
                 var divColor = isActiveGroup ? Colors.SelectionActive : Colors.SelectionInactive;
-                using (var b = new SolidBrush(divColor))
-                {
+                { var b = GdiCache.Brush(divColor);
+                
                     var divRect = new Rectangle(_tabArea.ClientRectangle.Left, _tabArea.ClientRectangle.Bottom - 2, _tabArea.ClientRectangle.Width, 2);
                     g.FillRectangle(b, divRect);
                 }
@@ -664,8 +664,8 @@ namespace DarkUI.Docking
                 // Content dropdown list
                 var dropdownRect = new Rectangle(_tabArea.DropdownRectangle.Left, _tabArea.DropdownRectangle.Top, _tabArea.DropdownRectangle.Width, _tabArea.DropdownRectangle.Height - 2);
 
-                using (var b = new SolidBrush(Colors.MediumBackground))
-                {
+                { var b = GdiCache.Brush(Colors.MediumBackground);
+                
                     g.FillRectangle(b, dropdownRect);
                 }
 
@@ -691,16 +691,16 @@ namespace DarkUI.Docking
             if (tab.Hot && !isVisibleTab)
                 bgColor = Colors.MediumBackground;
 
-            using (var b = new SolidBrush(bgColor))
-            {
+            { var b = GdiCache.Brush(bgColor);
+            
                 g.FillRectangle(b, tabRect);
             }
 
             // Draw separators
             if (tab.ShowSeparator)
             {
-                using (var p = new Pen(Colors.DarkBorder))
-                {
+                { var p = GdiCache.Pen(Colors.DarkBorder);
+                
                     g.DrawLine(p, tabRect.Right - 1, tabRect.Top, tabRect.Right - 1, tabRect.Bottom);
                 }
             }
@@ -724,8 +724,8 @@ namespace DarkUI.Docking
 
             // Draw text
             var textColor = isVisibleTab ? Colors.LightText : Colors.DisabledText;
-            using (var b = new SolidBrush(textColor))
-            {
+            { var b = GdiCache.Brush(textColor);
+            
                 var textRect = new Rectangle(tabRect.Left + 5 + xOffset, tabRect.Top, tabRect.Width - tab.CloseButtonRectangle.Width - 7 - 5 - xOffset, tabRect.Height);
                 g.DrawString(tab.DockContent.DockText, Font, b, textRect, tabTextFormat);
             }
@@ -756,16 +756,16 @@ namespace DarkUI.Docking
             if (tab.Hot && !isVisibleTab)
                 bgColor = Colors.MediumBackground;
 
-            using (var b = new SolidBrush(bgColor))
-            {
+            { var b = GdiCache.Brush(bgColor);
+            
                 g.FillRectangle(b, tabRect);
             }
 
             // Draw separators
             if (tab.ShowSeparator)
             {
-                using (var p = new Pen(Colors.DarkBorder))
-                {
+                { var p = GdiCache.Pen(Colors.DarkBorder);
+                
                     g.DrawLine(p, tabRect.Right - 1, tabRect.Top, tabRect.Right - 1, tabRect.Bottom);
                 }
             }
@@ -779,8 +779,8 @@ namespace DarkUI.Docking
             };
 
             var textColor = isVisibleTab ? Colors.BlueHighlight : Colors.DisabledText;
-            using (var b = new SolidBrush(textColor))
-            {
+            { var b = GdiCache.Brush(textColor);
+            
                 var textRect = new Rectangle(tabRect.Left + 5, tabRect.Top, tabRect.Width - 5, tabRect.Height);
                 g.DrawString(tab.DockContent.DockText, Font, b, textRect, tabTextFormat);
             }

@@ -375,14 +375,14 @@ namespace DarkUI.Docking
                 return;
 
             // Fill body
-            using (var b = new SolidBrush(Colors.ControlBackground))
-            {
+            { var b = GdiCache.Brush(Colors.ControlBackground);
+            
                 g.FillRectangle(b, ClientRectangle);
             }
 
             // Draw border
-            using (var p = new Pen(Colors.DarkBorder))
-            {
+            { var p = GdiCache.Pen(Colors.DarkBorder);
+            
                 // Top border
                 if (DockArea == DarkDockArea.Document)
                     g.DrawLine(p, ClientRectangle.Left, 0, ClientRectangle.Right, 0);

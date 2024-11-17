@@ -41,13 +41,13 @@ namespace DarkUI.Controls
             var textColor = Colors.LightText;
             var fillColor = Colors.ControlBackground;
 
-            using (var b = new SolidBrush(fillColor))
-            {
+            { var b = GdiCache.Brush(fillColor);
+            
                 g.FillRectangle(b, rect);
             }
-
-            using (var p = new Pen(BorderColor, 1))
             {
+                var p = GdiCache.Pen(BorderColor, 1);
+            
                 var borderRect = new Rectangle(0, (int)stringSize.Height / 2, rect.Width - 1, rect.Height - ((int)stringSize.Height / 2) - 1);
                 g.DrawRectangle(p, borderRect);
             }
@@ -63,8 +63,8 @@ namespace DarkUI.Controls
                 g.FillRectangle(b2, modRect);
             }
 
-            using (var b = new SolidBrush(textColor))
-            {
+            { var b = GdiCache.Brush(textColor);
+            
                 var stringFormat = new StringFormat
                 {
                     LineAlignment = StringAlignment.Center,
